@@ -2,6 +2,8 @@ import React from 'react';
 import footer from '../../assets/images/footer.png'
 
 const Footer = () => {
+    const date = new Date();
+    const year = date.getFullYear();
     return (
         <footer style={{
             background: `url(${footer})`,
@@ -30,7 +32,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='my-10 text-center'>
-                <p>Copyright © 2022 All Rights Reserved</p>
+                <p>Copyright © {year} - All right reserved</p>
             </div>
         </footer>
     );
