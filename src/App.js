@@ -7,6 +7,7 @@ import Login from './Pages/Login/Login';
 import Appointment from './Pages/Appointment/Appointment';
 import NotFound from './Pages/Shared/NotFound';
 import SignUp from './Pages/Login/SignUp';
+import RequireAuth from './Pages/Login/RequireAuth';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='about' element={<About></About>}></Route>
-        <Route path='appointment' element={<Appointment></Appointment>}></Route>
+        <Route path='appointment' element={<RequireAuth>
+          <Appointment></Appointment>
+        </RequireAuth>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
